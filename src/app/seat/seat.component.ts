@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { Vagons } from '../Models/vagon';
 import { Seats } from '../Models/seat';
+import { IsBookedService } from '../Services/is-booked.service';
 
 @Component({
   selector: 'app-seat',
@@ -10,12 +11,19 @@ import { Seats } from '../Models/seat';
 })
 export class SeatComponent {
 
+  constructor(public book : IsBookedService){}
+
   @Input() seat : Seats = new Seats
   @Input() chosenSeatsArr : Seats[] = []
 
+  isBooked = signal(false)
+  
   clickCounter1 = 1
   bck = "background-color:darkseagreen;"
   printSeat(el ?: string){
+    
+    console.log(this.book.isBooked())
+
 
     this.clickCounter1++
     if(this.clickCounter1 % 2 == 0){
@@ -32,6 +40,15 @@ export class SeatComponent {
       //console.log(this.chosenSeatsArr)
 
     }
+    // else if(this.book.isBooked() == true){
+
+    //   this.bck = "background-color: red;"
+    //   //console.log("This seat is already booked")
+    //   console.log("This seat is already booked")
+    // }
+    // else if(this.seat.isOccupied == true){
+    //   this.bck = "background-color: red;"
+    // }
     localStorage.setItem('selectedSeats', JSON.stringify(this.chosenSeatsArr))
 
   }

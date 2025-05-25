@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { ApiService } from '../Services/api.service';
 import { Vagons } from '../Models/vagon';
@@ -8,6 +8,7 @@ import { ButtonBckComponent } from "../button-bck/button-bck.component";
 import { Seats } from '../Models/seat';
 import { User } from '../Models/user';
 import { Post } from '../Models/post';
+import { IsBookedService } from '../Services/is-booked.service';
 @Component({
   selector: 'app-vagons',
   imports: [RouterModule, CommonModule, SeatComponent, ButtonBckComponent],
@@ -17,9 +18,12 @@ import { Post } from '../Models/post';
 
 export class VagonsComponent {
 
+
+
+  
   id !: number
 
-  constructor(private route : ActivatedRoute, private api : ApiService){
+  constructor(private route : ActivatedRoute, private api : ApiService, private book : IsBookedService){
     this.route.params.subscribe(ramp => this.id = ramp['id'])
     this.route.params.subscribe(ramp => this.date = ramp['date'])
     //console.log(this.id)
@@ -101,7 +105,7 @@ export class VagonsComponent {
       this.user = JSON.parse(localStorage.getItem('USER') || "")
       console.log(this.user)
 
-      this.bookedSeats = this.chosenSeats
+      //this.bookedSeats = this.chosenSeats
 
       this.post.trainId = this.vagon.trainId
       this.post.phoneNumber = this.user.phoneNumber1.toString()
@@ -128,7 +132,13 @@ export class VagonsComponent {
             //localStorage.removeItem('USER')
             localStorage.removeItem('VAGON')
             localStorage.removeItem('SEATS')
-       
+            //console.log(this.post.people)
+            //console.log(this.bookedSeats)
+            //this.book.markAsBooked()
+            //console.log(this.book.isBooked())
+            this.bookedSeats.forEach(seat => {
+              this.vagon.seats?.splice(this.vagon.seats?.findIndex(s => s.seatId === seat.seatId), 1);
+            })
         })
         
     }   

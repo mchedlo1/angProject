@@ -12,6 +12,10 @@
         <h2>Chosen seats:</h2>
         <app-seat *ngFor="let el of chosenSeats" [seat]="el" [chosenSeatsArr]="chosenSeats"></app-seat>
     </div>
+    <!-- <div class="bookedSeats">
+        <h2>Booked seats:</h2>
+        <app-seat *ngFor="let el of bookedSeats" [seat]="el" [chosenSeatsArr]="bookedSeats"></app-seat>
+    </div> -->
     <app-button-bck (click)="ok()" [text]="'Book'"></app-button-bck>
     
 </main>

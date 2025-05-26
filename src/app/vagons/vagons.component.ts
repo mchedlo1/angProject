@@ -139,6 +139,7 @@ export class VagonsComponent {
             this.bookedSeats.forEach(seat => {
               this.vagon.seats?.splice(this.vagon.seats?.findIndex(s => s.seatId === seat.seatId), 1);
             })
+            localStorage.setItem('BOOKEDSEATS', JSON.stringify(this.bookedSeats, null, 2));
         })
         
     }   

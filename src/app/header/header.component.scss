@@ -4,6 +4,8 @@ header{
     width: 100%;
     height: 200px;
     display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 
     section{
     width: 50%;
@@ -11,6 +13,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+
     }
 
     nav{

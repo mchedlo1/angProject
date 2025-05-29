@@ -25,7 +25,7 @@ export class ApiService {
     return this.http.post(`https://railway.stepprojects.ge/api/tickets/register`, obj, {responseType: 'text'})
   }
   
-  deleteSeats(id : string){
+  deleteSeats(id ?: string ){
     return this.http.delete(`https://railway.stepprojects.ge/api/tickets/cancel/${id}`)
   }
 }

@@ -8,6 +8,8 @@ main{
     height: 100vh;
     width: 100%;
     flex-wrap: wrap;
+                color: white;
+
 
     article{
         width: 40%;
@@ -18,9 +20,8 @@ main{
         flex-direction: column;
         flex-wrap: wrap;
         gap: 20PX;
-        h3{
-            cursor: pointer;
-        }
+        cursor: pointer;
+        background-color: rgba(82, 136, 136, 0.493);
 
     }
 }

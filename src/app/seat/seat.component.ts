@@ -43,7 +43,7 @@ export class SeatComponent {
     
     if(this.clickCounter1 % 2 == 0){
     //console.log(el, "ADDED")
-    this.bck = "background-color: white;"
+    this.bck = "background-color: white; color: black;"
     this.chosenSeatsArr.push(this.seat)
     //console.log(this.chosenSeatsArr)
 

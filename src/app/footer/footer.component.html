@@ -104,6 +104,7 @@
         <article *ngIf="userSignUp">
             <h2>Welcome {{user.Name}} {{user.lastName}} :D</h2>
             <p>you are signed in</p>
+            <app-button-bck (click)="logOut()" [text]="'Log out'"></app-button-bck>
         </article>
     </section>
 </main>

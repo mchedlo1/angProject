@@ -7,6 +7,8 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
     article{
         width: 70%;
         height: 60vh;
@@ -33,7 +35,8 @@ main{
         form{
             width: 100%;
             height: 60vh;
-            
+            color: white;
+        
             display: flex;
             justify-content: center;
             align-items: center;
@@ -42,11 +45,16 @@ main{
             flex-wrap: wrap;
             input{
                 padding: 7px;
+                background-color: rgba(255, 255, 255, 0.479);
+                border-radius: 10px;
+                border: 1px solid white;
+                
+
             }
             button{
                 height: 30px;
                 width: 100px;
-                background-color: darkseagreen;
+                background-color: rgba(82, 136, 136, 0.493);
                 border: none;
                 border-radius: 15px;
                 cursor: pointer;

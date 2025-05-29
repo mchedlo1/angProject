@@ -8,6 +8,8 @@ main{
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
     .nav{
         height: 300px;
         width: 80%;
@@ -18,6 +20,8 @@ main{
         background-color: rgba(82, 136, 136, 0.493);
         border-radius: 50px;
         flex-wrap: wrap;
+        color: white;
+        
         button{
             height: 40px;
             width: 130px;
@@ -26,6 +30,8 @@ main{
             border-radius: 15px;
             cursor: pointer;
             flex-wrap: wrap;
+            color: white;
+
         }
         div{
             display: flex;
@@ -34,6 +40,7 @@ main{
             align-items: center;
             width: 200px;
             justify-content: center;
+            
             select{
                 padding: 10px;
                 font-weight: 900;
@@ -42,6 +49,7 @@ main{
                 border-radius: 15px;
                 background-color: rgba(143, 188, 143, 0);
                 border: 1px solid white;
+                
             }
             input{
                 padding: 10px;
@@ -51,6 +59,8 @@ main{
                 border-radius: 15px;
                 background-color: rgba(143, 188, 143, 0);
                 border: 1px solid white;
+                color: white;
+
 
             }
         }
@@ -70,6 +80,8 @@ main{
             gap: 50px;
             background-color: rgba(82, 136, 136, 0.479);
             border-radius: 20px;
+            color: white;
+
 
 
 
@@ -105,6 +117,8 @@ main{
                     border-radius: 15px;
                     cursor: pointer;
                     flex-wrap: wrap;
+                    color: white;
+
                 }
                 // div{
                 //     width: 100px;

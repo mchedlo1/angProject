@@ -2,9 +2,9 @@
 <main>
     <h1>Booked seats</h1>
     <div class="seats" *ngFor="let el of bookedSeats">
-        <h2 (click)="delete(el.id)">{{el.date}}</h2>
-        <h2></h2>
+        <h2 *ngIf="isBookedSeats" (click)="delete(el.seatId)">{{el.number}}</h2>
+        <h2 *ngIf="!isBookedSeats">No seats booked</h2>
     </div>
-    <p>Thank you for your booking!</p>
-    <p>We look forward to seeing you soon.</p>
+    <h2>Thank you for your booking!</h2>
+    <h2>We look forward to seeing you soon.</h2>
 </main>

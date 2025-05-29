@@ -1,5 +1,7 @@
 
 
 <main (click)="printSeat(seat.number)" [style]="bck">
-<h3>{{seat.number}}</h3>
+<h3 *ngIf="this.isBooked == false">{{seat.number}}</h3>
+<h3 *ngIf="this.isBooked == true">!{{seat.number}}</h3>
 </main>
+

@@ -2,10 +2,11 @@ import { Component, Input, signal } from '@angular/core';
 import { Vagons } from '../Models/vagon';
 import { Seats } from '../Models/seat';
 import { IsBookedService } from '../Services/is-booked.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-seat',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './seat.component.html',
   styleUrl: './seat.component.scss'
 })
@@ -16,7 +17,16 @@ export class SeatComponent {
   @Input() seat : Seats = new Seats
   @Input() chosenSeatsArr : Seats[] = []
 
-  isBooked = signal(false)
+  isBooked = false
+  ngOnInit(){
+    if(this.seat.isOccupied == true){
+      this.bck = "background-color: red;"
+      console.log("This seat is already booked")
+      this.isBooked = true
+    }
+  }
+
+  
   
   clickCounter1 = 1
   bck = "background-color:darkseagreen;"
@@ -24,8 +34,13 @@ export class SeatComponent {
     
     console.log(this.book.isBooked())
 
+    if(this.bck == "background-color: red;"){
 
-    this.clickCounter1++
+    }
+    else{
+
+      this.clickCounter1++
+    
     if(this.clickCounter1 % 2 == 0){
     //console.log(el, "ADDED")
     this.bck = "background-color: white;"
@@ -40,6 +55,9 @@ export class SeatComponent {
       //console.log(this.chosenSeatsArr)
 
     }
+
+    }
+    
     // else if(this.book.isBooked() == true){
 
     //   this.bck = "background-color: red;"

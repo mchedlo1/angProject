@@ -15,7 +15,7 @@ main{
         gap: 50px;
         justify-content: center;
         align-items: center;
-        background-color: rgb(82, 136, 136);
+        background-color: rgba(82, 136, 136, 0.493);
         border-radius: 50px;
         flex-wrap: wrap;
         button{
@@ -68,6 +68,10 @@ main{
             height: 100px;
             display: flex;
             gap: 50px;
+            background-color: rgba(82, 136, 136, 0.479);
+            border-radius: 20px;
+
+
 
             .info{
                 display: flex;

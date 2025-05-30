@@ -36,9 +36,7 @@ export class BookedComponent {
       console.log(id)
     localStorage.removeItem('BOOKEDSEATS');
     this.api.deleteSeats(id).subscribe((resp : any) => {
-      
       console.log(resp);
-      
     })
     this.bookedSeats.splice(this.bookedSeats.indexOf(this.el), 1);
     console.log(this.bookedSeats);

@@ -127,6 +127,9 @@ export class VagonsComponent {
           console.log(resp)
          
             alert(resp)
+
+            //localStorage.setItem("bookedTkt", resp.split(":")[1])
+
             localStorage.removeItem('selectedSeats')
             //localStorage.removeItem('USER_SIGNUP')
             //localStorage.removeItem('USER')

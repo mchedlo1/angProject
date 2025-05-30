@@ -15,6 +15,7 @@ export class BookedComponent {
 
   constructor(private api : ApiService) { }
 
+  bookedTkt = ""
   bookedSeats : Seats[] = [];
   isBookedSeats = false
   ngOnInit() {
@@ -26,6 +27,10 @@ export class BookedComponent {
       this.bookedSeats = [];
       this.isBookedSeats = false
     }
+    // if(localStorage.getItem('bookedTkt')){
+
+    //   this.bookedTkt = localStorage.getItem('bookedTkt') || ""
+    // }
   }
 
   el : any
@@ -46,10 +51,12 @@ export class BookedComponent {
   }
 }
 
-// for(let el of this.bookedSeats){
-//       if(el.seatId == id){
-//         this.el = el
-//         return el;
-        
-//       }
-//     // }
+// deleteTkt(){
+//         localStorage.removeItem('bookedTkt')
+//          this.bookedTkt = ""
+//         this.api.deleteSeats(this.bookedTkt).subscribe((resp : any) => {
+      
+//       alert(resp);
+      
+//     })
+//   }

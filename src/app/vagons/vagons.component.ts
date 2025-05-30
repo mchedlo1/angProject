@@ -136,9 +136,9 @@ export class VagonsComponent {
             //console.log(this.bookedSeats)
             //this.book.markAsBooked()
             //console.log(this.book.isBooked())
-            //this.bookedSeats.forEach(seat => {
-              //this.vagon.seats?.splice(this.vagon.seats?.findIndex(s => s.seatId === seat.seatId), 1);
-            //})
+            this.bookedSeats.forEach(seat => {
+              this.vagon.seats?.splice(this.vagon.seats?.findIndex(s => s.seatId === seat.seatId), 1);
+            })
             localStorage.setItem('BOOKEDSEATS', JSON.stringify(this.bookedSeats, null, 2));
         })
         

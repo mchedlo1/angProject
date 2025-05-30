@@ -21,7 +21,7 @@ export class SeatComponent {
   ngOnInit(){
     if(this.seat.isOccupied == true){
       this.bck = "background-color: red;"
-      console.log("This seat is already booked")
+      //console.log("This seat is already booked")
       this.isBooked = true
     }
   }
@@ -32,7 +32,7 @@ export class SeatComponent {
   bck = "background-color:darkseagreen;"
   printSeat(el ?: string){
     
-    console.log(this.book.isBooked())
+    //console.log(this.book.isBooked())
 
     if(this.bck == "background-color: red;"){
 
@@ -55,18 +55,7 @@ export class SeatComponent {
       //console.log(this.chosenSeatsArr)
 
     }
-
-    }
-    
-    // else if(this.book.isBooked() == true){
-
-    //   this.bck = "background-color: red;"
-    //   //console.log("This seat is already booked")
-    //   console.log("This seat is already booked")
-    // }
-    // else if(this.seat.isOccupied == true){
-    //   this.bck = "background-color: red;"
-    // }
+  }
     localStorage.setItem('selectedSeats', JSON.stringify(this.chosenSeatsArr))
 
   }

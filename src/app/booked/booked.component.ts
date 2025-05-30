@@ -27,11 +27,29 @@ export class BookedComponent {
     }
   }
 
+  el : any
+
   delete(id ?: string ){
 
+    
+      console.log(id)
+    localStorage.removeItem('BOOKEDSEATS');
     this.api.deleteSeats(id).subscribe((resp : any) => {
+      
       console.log(resp);
+      
     })
+    this.bookedSeats.splice(this.bookedSeats.indexOf(this.el), 1);
+    console.log(this.bookedSeats);
+    alert(`Seat ${id} Was Deleted Successfully`);
 
   }
 }
+
+// for(let el of this.bookedSeats){
+//       if(el.seatId == id){
+//         this.el = el
+//         return el;
+        
+//       }
+//     // }

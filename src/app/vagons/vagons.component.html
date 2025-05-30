@@ -11,6 +11,7 @@
     <div class="chosenSeats">
         <h2>Chosen seats:</h2>
         <app-seat *ngFor="let el of chosenSeats" [seat]="el" [chosenSeatsArr]="chosenSeats"></app-seat>
+        <p>{{this.price}}ლ x{{this.chosenSeats.length}}</p>
     </div>
     <!-- <div class="bookedSeats">
         <h2>Booked seats:</h2>

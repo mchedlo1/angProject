@@ -24,6 +24,7 @@ export class BookedComponent {
     }
     else{
       this.bookedSeats = [];
+      this.isBookedSeats = false
     }
   }
 
@@ -42,6 +43,7 @@ export class BookedComponent {
     this.bookedSeats.splice(this.bookedSeats.indexOf(this.el), 1);
     console.log(this.bookedSeats);
     alert(`Seat ${id} Was Deleted Successfully`);
+    this.isBookedSeats = false
 
   }
 }

@@ -1,10 +1,11 @@
 
 <main>
-    <h1>Booked seats</h1>
-    <div class="seats" *ngFor="let el of bookedSeats">
-        <div *ngIf="isBookedSeats" (click)="delete(el.seatId)"><h2>{{el.number}}</h2></div>
+    <h1>Booked seats :</h1>
+    <div class="seats" *ngIf="isBookedSeats">
+        <h2>{{bookedTkt}}</h2>
+        <button (click)="deleteTkt()">Delete</button>
+        <h2>Thank you for your booking!</h2>
+        <h2>We look forward to seeing you soon.</h2>
     </div>
     <div *ngIf="!isBookedSeats"><h2 style="color: rgb(21, 230, 177);font-size: 50px;">No seats booked :(</h2></div>
-    <h2>Thank you for your booking!</h2>
-    <h2>We look forward to seeing you soon.</h2>
 </main>

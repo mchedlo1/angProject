@@ -60,7 +60,8 @@ export class VagonsComponent {
   deletes(){
           this.api.deleteSeats('s').subscribe((resp : any) => {
             console.log(resp)
-            alert(resp)
+            alert( resp.split(":")[1])
+            localStorage.setItem("bookedTkt", resp.split(":")[1])
           })
         }
 
@@ -128,7 +129,7 @@ export class VagonsComponent {
          
             alert(resp)
 
-            //localStorage.setItem("bookedTkt", resp.split(":")[1])
+            localStorage.setItem("bookedTkt", resp.split(":")[1])
 
             localStorage.removeItem('selectedSeats')
             //localStorage.removeItem('USER_SIGNUP')
@@ -142,7 +143,7 @@ export class VagonsComponent {
             this.bookedSeats.forEach(seat => {
               this.vagon.seats?.splice(this.vagon.seats?.findIndex(s => s.seatId === seat.seatId), 1);
             })
-            localStorage.setItem('BOOKEDSEATS', JSON.stringify(this.bookedSeats, null, 2));
+            //localStorage.setItem('BOOKEDSEATS', JSON.stringify(this.bookedSeats, null, 2));
         })
         
     }   
